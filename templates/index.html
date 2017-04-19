@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html >
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Crime Predictors</title>
+        <link rel="stylesheet" href="{% static "assets/css/style.css" %}">
+        <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+     <form method='POST' action='/predict/'> {% csrf_token %}
+
+        <h1>Crime Predictor</h1>
+
+        <fieldset>
+          <legend><span class="number">1</span>Input Variables</legend>
+          <label for="year">Year:</label>
+          <input type="text" id="Year" name="year">
+
+          <label for="crime">Crime:</label>
+          <input type="text" id="crime" name="crime">
+          
+        </fieldset>
+
+
+        <button type="submit">Predict</button>
+      </form>
+
+    </body>
+</html>
