@@ -1,0 +1,128 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crime Predictors</title>
+  <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="{% static "assets/css/style.css" %}">
+
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a<a class="navbar-brand" href="#"><img class="img-responsive2" style="width: 50px; height: 50px "       
+           src={% static "assets/images/redlogo.png" %}></a>
+        </div>
+        <ul class="nav navbar-nav" style="float:right">
+          <li><a href="/">Home</a></li>
+          <li><a href="#">Prediction</a></li>
+          <li><a href="/analysis">Analysis</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="jumbotron">
+      <h1>Prediction Dashboard</h1>
+      <h2 class="lead">
+        Intelligence is the ability to adapt to change. 
+        <span style="font-style: oblique; color:red;font-size:16px"> - Stephen Hawkins</span>
+      </h2>
+    </div>
+  <div class="container">
+    <div class="row" >
+      <div class="col-md-6" >
+        <p style="text-align: center; font-weight: bold;">
+          Predicting the crime rate of a particular type of criminal act
+          per year
+        </p>
+        <form method='POST' action='/predict/'> {% csrf_token %}
+        <h1>Crime Predictor</h1>
+        <fieldset>
+          <legend><span class="number">1</span>Input Variables</legend>
+          <label for="year">Year:</label>
+          <input type="text" id="Year" name="year">
+
+          <label for="crime">Crime:</label>
+          <input type="text" id="crime" name="crime">
+          
+        </fieldset>
+
+
+        <button type="submit">Predict</button>
+      </form>
+      </div>
+      <div class="col-md-6">
+         <p style="text-align: center; font-weight: bold;">
+          Predicting the crime rate of a particular type of criminal act
+          at a certain duration in a day
+        </p>
+        <form method='POST' action='/predictTimeFrame/'> {% csrf_token %}
+
+        <h1>Crime ~ Time Frame</h1>
+        <fieldset>
+          <legend><span class="number">1</span>Input Variables</legend>
+          <label for="shift">Time Frame:</label>
+          <input type="text" id="shift" name="shift">
+
+          <label for="year">Year:</label>
+          <input type="text" id="Year" name="year">
+
+          <label for="crime">Crime:</label>
+          <input type="text" id="crime" name="crime">
+          
+        </fieldset>
+
+
+        <button type="submit">Predict</button>
+      </form>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+      </div>
+      <div class="col-md-6 col-md-offset-2">
+        <p style="text-align: center; font-weight: bold;">
+          Predicting the crime rate of a particular type of criminal act
+          at a particular location.
+        </p>
+        <form method='POST' action='/predictTimeFrameLocation/'> {% csrf_token %}
+
+        <h1>Crime ~ Location</h1>
+
+        <fieldset>
+          <legend><span class="number">1</span>Input Variables</legend>
+          <label for="crime">Crime:</label>
+          <input type="text" id="crime" name="crime">
+
+          <label for="loc">Location:</label>
+          <input type="text" id="loc" name="loc">
+          <label for="shift">Time Frame:</label>
+          <input type="text" id="shift" name="shift">
+
+          <label for="year">Year:</label>
+          <input type="text" id="Year" name="year">
+          
+        </fieldset>
+
+
+        <button type="submit">Predict</button>
+      </form>
+      </div>
+    </div>
+  </div>
+
+</body>
+<footer style="background-color: black; height: 40px; " >
+  <p style= "color:white;text-align:center;padding-top:10px">
+    &copy; Copyright 2017, Data Mafia-DIH Islamabad
+  </p>
+</footer>
+</html>
