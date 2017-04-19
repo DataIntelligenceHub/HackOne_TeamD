@@ -1,31 +1,56 @@
 {% load static %}
 <!DOCTYPE html>
 <html >
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Crime Predictors</title>
-        <link rel="stylesheet" href="{% static "assets/css/style.css" %}">
-        <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
-    </head>
-    <body>
-     <form method='POST' action='/predict/'> {% csrf_token %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crime Predictors</title>
+    <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{% static "assets/css/style.css" %}">
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#"><img class="img-responsive2" style="width: 50px; height: 50px "       
+           src={% static "assets/images/redlogo.png" %}></a>
+        </div>
+        <ul class="nav navbar-nav" style="float:right">
+          <li><a href="#">Home</a></li>
+          <li><a href="/prediction">Prediction</a></li>
+          <li><a href="/analysis">Analysis</a></li>
+        </ul>
+      </div>
+    </nav>
+      <div class="jumbotron">
+        <h1><span style="color:red">Crime </span> Predictions and Analysis</h1>
+          <h2 class="lead">
+            You can not hide <span style="color:red">!! </span>
+          </h2>
+        </div>
+    
+     {% comment %}Bootstrap Gridding{% endcomment %}
+    
+    <div class = "container-fluid">
+      <div class="row">
+        <div class="col-md-2" >
+        </div>
+        <div class="col-md-8">
+            <iframe width="933" height="700" src="https://app.powerbi.com/view?r=eyJrIjoiYTkxY2MzMWItOTk0MS00NDE3LTllZjMtN2FiYjQ3NDFiNzg2IiwidCI6IjE3M2M0ZTU3LTY1ZmEtNDFkMC05ZTA1LTFmNDZlYmI1N2U1NiIsImMiOjl9" frameborder="0" allowFullScreen="true"></iframe>
+        </div>
+        <div class="col-md-2">
+        </div>
+      </div>
+    </div>
+  </body>
 
-        <h1>Crime Predictor</h1>
+  <footer style="background-color:black; height: 40px; " >
+  <p style= "color:white;text-align:center;padding-top:10px">
+    &copy; Copyright 2017, Data Mafia-DIH Islamabad
+  </p>
+</footer>
 
-        <fieldset>
-          <legend><span class="number">1</span>Input Variables</legend>
-          <label for="year">Year:</label>
-          <input type="text" id="Year" name="year">
-
-          <label for="crime">Crime:</label>
-          <input type="text" id="crime" name="crime">
-          
-        </fieldset>
-
-
-        <button type="submit">Predict</button>
-      </form>
-
-    </body>
 </html>

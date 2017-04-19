@@ -1,3 +1,4 @@
+
 *, *:before, *:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -10,14 +11,16 @@ body {
 }
 
 form {
-  max-width: 300px;
+  max-width: 500px;
   margin: 10px auto;
   padding: 10px 20px;
   background: #f4f7f8;
-  border-radius: 8px;
-  
-}
+  border-radius: 8px;  
+} 
 
+.col-md-6 {
+  margin: 50px 0;
+}
 h1 {
   margin: 0 0 30px 0;
   text-align: center;
@@ -116,4 +119,16 @@ label.light {
     max-width: 480px;
   }
 
+}
+.jumbotron {
+/*/home/shahidammer/workspace/HackOne_TeamD/static/images/pexels-photo-28452.jpg*/
+  background-color: black;
+  background-image: url("http://www.zastavki.com/pictures/2560x1600/2011/Cities_Night_city_027610_.jpg");
+  color: white;
+  text-align: center;
+  margin-top: -20px;
+}
+.navbar {
+  background-color: black;
+  color: white;
 }

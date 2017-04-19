@@ -89,7 +89,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
-    ('assets', '/home/shahidammer/workspace/DjangoAppforAzure/static'),
+    ('assets', BASE_DIR +'/static'),
 )
 
 TEMPLATE_DIRS = (

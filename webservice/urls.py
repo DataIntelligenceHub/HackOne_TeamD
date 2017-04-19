@@ -18,8 +18,12 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^index/$','Azure.views.index'),
+    url(r'^$','Azure.views.index'),
+    url(r'^prediction/$','Azure.views.prediction'),
     url(r'^analysis/$','Azure.views.analysis'),
     url(r'^predict/$','Azure.views.predict'),
     url(r'^predictTimeFrame/$','Azure.views.predictTimeFrame'),
+    url(r'^predictTimeFrameLocation/$','Azure.views.predictTimeFrameLocation'),
+
+    
 ]

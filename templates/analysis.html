@@ -1,16 +1,54 @@
+{% load static %}
+
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
-    <body>
-       <h1>WOW Babbbooo YOU ARE AWESOME</h1>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analysis</title>
+    <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{% static "assets/css/style.css" %}">
+  </head>
+  <body>
+
+<nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Data Mafia</a>
+        </div>
+        <ul class="nav navbar-nav" style="float:right">
+          <li><a href="/">Home</a></li>
+          <li><a href="/prediction">Prediction</a></li>
+          <li><a href="#">Analysis</a></li>
+        </ul>
+      </div>
+    </nav>
+
+      
+      <div class="jumbotron" >
+        <h1>Data Analysis</h1>
+          <h2 class="lead">
+            You can not hide <span style="color:red">!! </span>
+          </h2>
+        </div>
+    <div class="row">
+        <div class="col-md-10 col-md-offset-2">
+            <iframe
+                width="933" 
+                height="700" 
+                src="https://app.powerbi.com/view?r=eyJrIjoiOTIzMzQ0MGYtNTg3YS00YmEzLWExM2EtZTcxMmNlOThiMzc2IiwidCI6IjE3M2M0ZTU3LTY1ZmEtNDFkMC05ZTA1LTFmNDZlYmI1N2U1NiIsImMiOjl9" 
+                frameborder="0" 
+                allowFullScreen="true">
+            </iframe>
+        </div>
+    </div>   
     </body>
+     <footer style="background-color:black; height: 40px; " >
+  <p style= "color:white;text-align:center;padding-top:10px">
+    &copy; Copyright 2017, Data Mafia-DIH Islamabad
+  </p>
+</footer>
 </html>
